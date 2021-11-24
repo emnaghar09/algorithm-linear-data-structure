@@ -1,0 +1,27 @@
+ALGORITHM checkpoint
+VAR
+    sum, i, j : INTEGER :=0
+    SET1: ARRAY_OF INTEGER[4]
+    SET2: ARRAY_OF INTEGER[5]
+    test : BOOLEAN
+BEGIN
+    SET1 := {3,1,7,9}; 
+    SET2 := {2,4,1,9,3}; 
+    IF (MAX(SET1[0], SET2[0])< MIN (SET1[SET1.length],SET2[SET2.length])) THEN
+    FOR i FROM 0 TO SET1.length-1 DO
+    test:= False;
+    WHILE (j<SET2.length) DO
+    IF (SET1[i]= SET2[j])  THEN
+    test:= True
+    END_IF
+    j:=j+1;
+    END_WHILE
+    IF (test=false) THEN
+    sum:=sum + SET1[i]+SET2[j];
+    END_IF
+    END_FOR
+   
+    END_IF
+    write(sum);
+END
+
